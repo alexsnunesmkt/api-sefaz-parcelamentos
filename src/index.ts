@@ -4,6 +4,8 @@ import accountRoute from "@routes/accountRoute";
 import personRoute from "@routes/personRoute";
 import installmentsRoute from "@routes/installmentsRoute";
 import installmentByIdRoute from "@routes/installmentByIdRoute";
+import generateParcelRoute from "@routes/generateParcelRoute";
+import preparePdfInstallmentRoute from "@routes/preparePdfInstallmentRoute";
 
 const app = express();
 const port = 3000;
@@ -14,6 +16,8 @@ app.use("/api/v1/account", accountRoute)
 app.use("/api/v1/person", personRoute)
 app.use("/api/v1/installments", installmentsRoute);
 app.use("/api/v1/installmentById", installmentByIdRoute);
+app.use("/api/v1/generateParcel", generateParcelRoute);
+app.use("/api/v1/preparePdfInstallment", preparePdfInstallmentRoute);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("API rodando com Node.js e TypeScript!");
