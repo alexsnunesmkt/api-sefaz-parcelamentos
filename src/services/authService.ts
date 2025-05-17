@@ -1,12 +1,7 @@
 import axios from "axios";
 import dotenv from "dotenv";
+import { AuthRequestData } from "@interfaces/IAuthData";
 dotenv.config();
-
-export interface AuthRequestData {
-  username: string;
-  password: string;
-  rememberMe: boolean;
-}
 
 const authRoute = process.env.AUTH_ROUTE;
 

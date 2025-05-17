@@ -1,9 +1,15 @@
 import { Request, Response } from "express";
 import { authenticateService } from "@services/authService";
+import { AuthRequestData } from "@interfaces/IAuthData";
 
-export async function authenticate(req: Request, res: Response) {
+export async function authenticate(req: Request, res: Response): Promise<void> {
   try {
-    const result = await authenticateService(req.body);
+    const data: AuthRequestData = req.body;
+    data.rememberMe = false
+    if (!data.username || !data.password) {
+      res.status(400).json({ message: "Credenciais inválidas" });
+    }
+    const result = await authenticateService(data);
     res.status(200).json(result);
   } catch (error: any) {
     if (error.response) {
