@@ -6,6 +6,7 @@ import installmentsRoute from "@routes/installmentsRoute";
 import installmentByIdRoute from "@routes/installmentByIdRoute";
 import generateParcelRoute from "@routes/generateParcelRoute";
 import preparePdfInstallmentRoute from "@routes/preparePdfInstallmentRoute";
+import generatePdfInstallmentRoute from "@routes/generatePdfInstallmentRoute";
 
 const app = express();
 const port = 3000;
@@ -18,6 +19,7 @@ app.use("/api/v1/installments", installmentsRoute);
 app.use("/api/v1/installmentById", installmentByIdRoute);
 app.use("/api/v1/generateParcel", generateParcelRoute);
 app.use("/api/v1/preparePdfInstallment", preparePdfInstallmentRoute);
+app.use("/api/v1/generatePdfInstallment", generatePdfInstallmentRoute);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("API rodando com Node.js e TypeScript!");

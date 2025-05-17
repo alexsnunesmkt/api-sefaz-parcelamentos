@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { generateParcelService } from "@services/generateParcelService";
-import { AccountRequestData } from "@interfaces/IAccountData";
 import { GenerateParcelData } from "@interfaces/IGenerateParcelData";
-import { PersonRequestData } from "@interfaces/IPersonData";
 
 export async function generateParcelController(req: Request, res: Response): Promise<void> {
   try {
